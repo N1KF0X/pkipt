@@ -89,3 +89,13 @@ def cancel_enrollment(recruitment_name: str):
             continue
         priority_speciality.is_enrolled = False
         priority_speciality.save()
+
+
+def get_recruitments() -> typing.List[models.Recruitment]:
+    return models.Recruitment.objects.filter(
+        closing_date__gt=datetime.datetime.now()
+    )
+
+
+def get_specialities():
+    return models.Speciality.objects.all()
