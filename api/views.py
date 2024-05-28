@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from . import exc, resp, serializers, use_cases
 from rest_framework import response, views
 from django.http import *
